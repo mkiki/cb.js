@@ -1,0 +1,11 @@
+JQuery TreeView plugin
+	http://bassistance.de/jquery-plugins/jquery-plugin-treeview/
+
+Ace Editor
+	https://github.com/ajaxorg/ace/downloads
+
+
+Notes:
+
+run chrome with 
+--allow-file-access-from-files --allow-file-access

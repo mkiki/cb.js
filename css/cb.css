@@ -1,0 +1,73 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  background: #FFFFFF;
+  color: #222222;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+
+}
+
+ul li {
+	padding: 0 0 0 8px;
+}
+
+/* Code Browser Frame */
+.cb-frame {
+}
+
+/*
+.cb-frame .cb-browser {
+	float: left;
+	display: inline-block;
+	width: 220px;
+}
+
+
+.cb-frame .cb-editor {
+	float: left;
+	display: inline-block;
+	margin-left: 220px;
+}
+*/
+
+/* Editor panel */
+#cbEditor {
+	position: absolute;
+	top: 0;
+    bottom: 0;
+    left: 220px;
+    right: 0;
+}
+
+/* Browser panel */
+.cb-browser {
+}
+
+.cb-browser ul.treeview {
+}
+
+.cb-browser ul {
+	margin: 0;
+}
+
+.cb-browser ul li {
+	cursor: pointer;
+	line-height: 15px;
+	height: 15px;
+	padding: 3px 0 3px 20px;
+}
+
+.cb-browser ul li span {
+	cursor: pointer;	
+}
+
+.cb-browser ul li span:hover {
+	text-decoration: underline;
+};

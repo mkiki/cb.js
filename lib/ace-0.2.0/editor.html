@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Editor</title>
+  <style type="text/css">
+    #editor { 
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+<script src="../../lib/jquery.js"></script>
+<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<pre id="editor"></pre>
+    
+<script>
+//$(window).load(function() {
+$(document).ready(function() {
+  $('#editor').text("function foo(items) {\n}");
+//window.onload = function() {
+    var editor = ace.edit("editor");
+//};
+});
+</script>
+
+</body>
+</html>

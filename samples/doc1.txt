@@ -1,0 +1,21 @@
+#[of]:Home
+#[of]:About
+Code Browser is a folding text editor for Linux and Windows, designed to hierarchically structure any kind of text file and especially source code. 
+It makes navigation through source code faster and easier.
+
+Code Browser is especially designed to keep a good overview of the code of large projects, 
+but is also useful for a simple css file. Ideal if you are fed up of having to scroll through thousands of lines of code.
+
+See the Introduction to Code Folding page if you want more information on text folding and the way it is implemented in Code Browser.
+
+It supports syntax highlighting for all major languages and custom syntax highlighting can also be added.
+
+Although Code Browser was initially designed to edit programs, it can also be used for different tasks such as plain text 
+outlining or helping to understand existing source code. I've added a page with suggestions to take advantage of folding.
+#[cf]
+#[of]:License
+Code Browser is released under the GPL v2 License.
+#[cf]
+
+#[cf]
+
