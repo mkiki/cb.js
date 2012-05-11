@@ -4,8 +4,19 @@
   <head> 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
     <link type="text/css" rel="stylesheet" href="css/jquery-ui-cb.css">
-    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="lib/treeview/jquery.treeview.css" />
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/lib/codemirror.css">
+
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/ambiance.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/blackboard.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/cobalt.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/eclipse.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/elegant.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/lesser-dark.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/monokai.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/neat.css">
+    <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/xq-dark.css">
+
     <link type="text/css" rel="stylesheet" href="css/cb.css">
 
     <title>Code Browser Experiment</title> 
@@ -16,18 +27,15 @@
     <script src="lib/jquery.js"></script>
     <script src="lib/jquery-ui-1.8.16.custom.min.js"></script>
     <script src="lib/treeview/lib/jquery.cookie.js" type="text/javascript"></script>
-    <script src="lib/ace-0.2.0/src/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="lib/ace-0.2.0/src/theme-twilight.js" type="text/javascript" charset="utf-8"></script>
-    <script src="lib/ace-0.2.0/src/mode-javascript.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/CodeMirror-2.24/lib/codemirror.js"></script>
+    <!-- <script src="lib/CodeMirror-2.24/mode/javascript/javascript.js"></script> -->
     <script src="lib/treeview/jquery.treeview.js" type="text/javascript"></script>
 
     <script src="js/cb.js"></script>
     <script>
 
         function handle_content(content, label) {
-          //console.log(content);
           var lines = content.split('\n');
-          //console.log(lines);
           var doc = {
             icon: 'root',
             label: label,
@@ -56,10 +64,6 @@
               parent.text = parent.text + line + '\n';
             }
           });
-
-          console.log('**');
-          console.log(JSON.stringify(doc));
-          console.log('**');
 
           $('#file').hide();
           $('#cb').codeBrowser({

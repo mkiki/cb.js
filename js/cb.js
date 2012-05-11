@@ -65,16 +65,15 @@
 
     _create: function() {
       var that = this;
-      // this.element.addClass('cb-editor');
-      // TODO should generate ID to allow multiple editors on the same page
-      that.$editor = $('<div id="cbEditor">Hello, world\ndzegfzeg</div>').appendTo(this.element);
-      that.aceEditor = ace.edit("cbEditor");
-      //this.aceEditor.setTheme("ace/theme/twilight");
+      this.element.addClass('cb-editor');
+      var place = that.element.get()[0];
+      this.editor = CodeMirror(place, {
+        theme: 'cobalt'
+      });
     },
 
     select: function(item) {
-      //console.log("Item selected", item);
-      this.aceEditor.getSession().setValue(item.text);
+      this.editor.setValue(item.text);
     }
   });
 })(jQuery, document);
