@@ -8,16 +8,6 @@ body {
   font-size: 13px;
 }
 
-ul {
-	padding: 0;
-	list-style: none;
-
-}
-
-ul li {
-	padding: 0 0 0 8px;
-}
-
 /* Code Browser Frame */
 .cb-frame {
 }
@@ -32,8 +22,30 @@ ul li {
     max-width: 800px;
 }
 
+.cb-editor .body {
+  background-color: #333;
+  color: #DDD;
+  padding: 8px;
+}
+
+.cb-editor .body pre.line {
+  padding: 0;
+  margin: 0;
+}
+
+.cb-editor .body pre.line.data {
+}
+
+.cb-editor .body pre.line.fold {
+  background-color: #336;
+  color: #DDF;
+  cursor: pointer;
+}
+
 /* Browser panel */
 .cb-browser {
+  width: 220px;
+  max-width: 220px;
 }
 
 .cb-browser ul.treeview {
@@ -41,19 +53,28 @@ ul li {
 
 .cb-browser ul {
 	margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .cb-browser ul li {
 	cursor: pointer;
 	line-height: 15px;
 	height: 15px;
-	padding: 3px 0 3px 20px;
+	padding: 3px 0 3px 10px;
+  background: #ffffff url('../img/file.png') no-repeat left top;
+}
+
+.cb-browser ul li[selected='selected'] {
+  background-color: #FF0;
 }
 
 .cb-browser ul li span {
-	cursor: pointer;	
+	cursor: pointer;
+  padding: 0 0 0 12px;
 }
 
 .cb-browser ul li span:hover {
 	text-decoration: underline;
-};
+}
+

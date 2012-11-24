@@ -4,6 +4,7 @@
   <head> 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
     <link type="text/css" rel="stylesheet" href="css/jquery-ui-cb.css">
+    <!--
     <link rel="stylesheet" href="lib/treeview/jquery.treeview.css" />
     <link rel="stylesheet" href="lib/CodeMirror-2.24/lib/codemirror.css">
 
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/monokai.css">
     <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/neat.css">
     <link rel="stylesheet" href="lib/CodeMirror-2.24/theme/xq-dark.css">
+  -->
 
     <link type="text/css" rel="stylesheet" href="css/cb.css">
 
@@ -35,39 +37,11 @@
     <script>
 
         function handle_content(content, label) {
-          var lines = content.split('\n');
-          var doc = {
-            icon: 'root',
-            label: label,
-            children: [],
-            text: ''
-          };
-
-          var stack = [ doc ];
-          var row = -1;
-          $.each(lines, function(index, line) {
-            row = row+1;
-            var h5 = line.substr(0, 5);
-            var h6 = line.substr(0, 6);
-            if( h6 === '#[of]:' ) {
-              line = line.substr(6);
-              var item = { icon: 'fold', label: line, row: row, children: [], text:'' };
-              var parent = stack[stack.length-1];
-              parent.children.push(item);
-              stack.push(item);
-            }
-            else if( h5 === '#[cf]') {
-              stack.pop();
-            }
-            else {
-              var parent = stack[stack.length-1];
-              parent.text = parent.text + line + '\n';
-            }
-          });
-
+          var doc = cb.newModel(content, label);
           $('#file').hide();
           $('#cb').codeBrowser({
-            document: doc
+            document: doc,
+            rows: 30
           });
         }
 
@@ -91,6 +65,7 @@
 
         
           var content = "#[of]:Home\n" +
+                        "\n" +
                         "#[of]:About\n" +
                         "Code Browser is a folding text editor for Linux and Windows, designed to hierarchically structure any kind of text file and especially source code. \n" +
                         "It makes navigation through source code faster and easier.\n" +
@@ -105,6 +80,7 @@
                         "Although Code Browser was initially designed to edit programs, it can also be used for different tasks such as plain text \n" +
                         "outlining or helping to understand existing source code. I've added a page with suggestions to take advantage of folding.\n" +
                         "#[cf]\n" +
+                        "Some dummy text\n" +
                         "#[of]:License\n" +
                         "Code Browser is released under the GPL v2 License.\n" +
                         "#[cf]\n" +
